@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Para Aly 💛</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#090b12;color:#fff7df;font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+:root{--gold:#ffd84a;--yellow:#ffe36e;--cream:#fff5d1;--glass:rgba(255,245,210,.09)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 20%,rgba(255,207,72,.13),transparent 35%),radial-gradient(circle at 20% 80%,rgba(255,175,45,.08),transparent 30%);z-index:0}
+canvas{position:fixed;inset:0;z-index:1;pointer-events:none}
+#experience{position:relative;min-height:100vh}
+.page{display:none!important;opacity:0;transform:scale(.985);transition:opacity .7s ease,transform .7s ease}
+.page.active{display:grid!important;opacity:1;transform:scale(1)}
+.page.leaving{opacity:0;transform:scale(1.025)}
+.scene{position:relative;min-height:100vh;display:grid;place-items:center;padding:70px 22px;overflow:hidden;z-index:2}
+.hero{background:radial-gradient(ellipse at 50% 100%,#8b5a13 0%,#211a16 35%,#090b12 78%)}
+.moon{position:absolute;width:150px;height:150px;border-radius:50%;right:10%;top:9%;background:#fff2bd;box-shadow:0 0 45px rgba(255,239,170,.4);opacity:.8}
+.heroContent{text-align:center;position:relative;z-index:3}
+.kicker{letter-spacing:5px;text-transform:uppercase;font:12px Arial,sans-serif;color:#ffeaa0;opacity:.8}
+h1{font-size:clamp(64px,13vw,150px);line-height:.9;margin:20px 0 16px;color:#ffe477;text-shadow:0 0 35px rgba(255,212,69,.25)}
+.hero p{font-size:clamp(19px,3vw,28px);font-style:italic;color:#fff5d6;margin:0 auto 35px}
+.btn{border:1px solid rgba(255,225,110,.65);background:rgba(255,220,90,.08);color:#fff3bd;padding:14px 28px;border-radius:999px;font:600 14px Arial,sans-serif;letter-spacing:1px;cursor:pointer;transition:.35s;backdrop-filter:blur(8px);text-decoration:none;display:inline-block}.btn:hover{transform:translateY(-3px);background:rgba(255,220,90,.17);box-shadow:0 0 30px rgba(255,214,76,.18)}
+.garden{background:linear-gradient(#12121a,#20170d 70%,#100d09)}
+.content{max-width:900px;text-align:center;position:relative;z-index:4}.eyebrow{font:11px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#eecf6c;margin-bottom:16px}
+h2{font-size:clamp(38px,7vw,72px);font-weight:400;margin:0 0 25px;color:#ffe99b}.lead{font-size:clamp(18px,2.5vw,24px);line-height:1.7;color:#fff4d8}
+.flowers{position:absolute;inset:auto 0 0;height:44%;pointer-events:none}
+.flower{position:absolute;bottom:-15px;width:70px;height:140px;transform-origin:bottom center;animation:sway 4s ease-in-out infinite}
+.flower:before{content:"";position:absolute;bottom:0;left:34px;width:4px;height:105px;background:#46602a;border-radius:5px}.head{position:absolute;top:5px;left:5px;width:65px;height:65px;border-radius:50%;background:#4a2910;box-shadow:0 0 0 7px #f5b92e,0 0 0 14px #ffd83e,0 0 0 21px #f5bd24,0 0 0 27px #ffe36b;filter:drop-shadow(0 0 14px rgba(255,215,60,.22))}
+.flower:nth-child(1){left:3%;transform:scale(.8);animation-delay:-1s}.flower:nth-child(2){left:14%;transform:scale(1.1);animation-delay:-2.3s}.flower:nth-child(3){left:29%;transform:scale(.65);animation-delay:-.7s}.flower:nth-child(4){left:43%;transform:scale(1.2);animation-delay:-3s}.flower:nth-child(5){left:59%;transform:scale(.75);animation-delay:-1.8s}.flower:nth-child(6){left:72%;transform:scale(1.05);animation-delay:-.2s}.flower:nth-child(7){left:86%;transform:scale(.7);animation-delay:-2.8s}
+@keyframes sway{0%,100%{rotate:-3deg}50%{rotate:4deg}}
+.letter{background:radial-gradient(circle at 50% 15%,#3a2a13,#110f0c 65%)}.paper{max-width:780px;background:linear-gradient(145deg,#fff8df,#f6e8bd);color:#46351e;padding:clamp(30px,7vw,70px);border-radius:4px;box-shadow:0 25px 90px rgba(0,0,0,.55);position:relative;transform:rotate(-.4deg)}.paper:before{content:"";position:absolute;inset:14px;border:1px solid rgba(133,93,30,.22);pointer-events:none}.paper h2{color:#6d501e}.paper p{font-size:clamp(17px,2.4vw,21px);line-height:1.9;text-align:left}.signature{text-align:right;font-style:italic;font-size:22px;margin-top:30px}
+.reveal{background:radial-gradient(circle,#3b2c10,#0b0c12 62%)}.bigFlower{width:150px;height:150px;border-radius:50%;background:#63401a;box-shadow:0 0 0 17px #ffd944,0 0 0 32px #ffef88,0 0 0 46px #ffd43d,0 0 75px rgba(255,218,75,.25);margin:35px auto 55px;animation:pulse 3s ease-in-out infinite}.finalText{font-size:clamp(34px,6vw,70px);color:#ffe78a;margin:15px 0}.small{font-size:20px;color:#fff0c9;line-height:1.7}@keyframes pulse{50%{transform:scale(1.04);filter:brightness(1.12)}}
+.sunset{background:linear-gradient(to bottom,#16182b 0%,#7b3650 35%,#e77d39 66%,#f6bf55 100%);align-items:end}.sun{position:absolute;width:190px;height:190px;border-radius:50%;background:#ffe78b;top:22%;left:50%;transform:translateX(-50%);box-shadow:0 0 100px #ffd45a}.horizon{position:absolute;bottom:0;width:100%;height:30%;background:linear-gradient(#3e3216,#17120c);clip-path:polygon(0 48%,8% 42%,15% 49%,23% 39%,30% 47%,39% 35%,48% 46%,58% 37%,67% 48%,75% 40%,84% 47%,92% 38%,100% 45%,100% 100%,0 100%)}.final{background:radial-gradient(circle at 50% 55%,#5d4214,#17130d 55%,#08090e);min-height:100vh}.footerFlowers{position:absolute;bottom:0;left:0;right:0;height:35%;background:linear-gradient(transparent,#0a0908)}
+.music{position:fixed;right:18px;bottom:18px;z-index:10;border:1px solid rgba(255,226,105,.4);background:rgba(10,10,12,.55);color:#ffe88a;border-radius:50%;width:48px;height:48px;cursor:pointer;backdrop-filter:blur(10px)}
+.fade{opacity:0;transform:translateY(25px);transition:1.2s ease}.fade.show{opacity:1;transform:none}
+@media(max-width:600px){.moon{width:90px;height:90px}.flowers{height:31%}.flower:nth-child(1),.flower:nth-child(3),.flower:nth-child(5),.flower:nth-child(7){display:none}.paper p{text-align:left}.sun{width:120px;height:120px}}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+
+<main id="experience">
+<section class="scene hero page active">
+  <div class="moon"></div>
+  <div class="heroContent fade show">
+    <div class="kicker">Un pequeño lugar hecho para ti</div>
+    <h1>Aly</h1>
+    <p>Hay cosas que son difíciles de decir con palabras...</p>
+    <button class="btn next">Entra, tengo algo que decirte 💛</button>
+  </div>
+</section>
+
+<section class="scene garden page">
+  <div class="content fade">
+    <div class="eyebrow">Primera parada 🌻</div>
+    <h2>Un pedacito de mi corazón</h2>
+    <p class="lead">Quería regalarte algo diferente. Así que hice este pequeño jardín lleno de girasoles, porque quería que tuvieras un lugar que, aunque sea en una pantalla, estuviera hecho solamente pensando en ti.</p>
+    <button class="btn next">Hay algo más para ti →</button>
+  </div>
+  <div class="flowers">
+    <div class="flower"><div class="head"></div></div><div class="flower"><div class="head"></div></div><div class="flower"><div class="head"></div></div>
+    <div class="flower"><div class="head"></div></div><div class="flower"><div class="head"></div></div><div class="flower"><div class="head"></div></div><div class="flower"><div class="head"></div></div>
+  </div>
+</section>
+
+<section class="scene letter page">
+  <div class="paper fade">
+    <div class="eyebrow">Segunda parada 💌</div>
+    <h2>Una pequeña carta</h2>
+    <p>Quería hacerte algo diferente porque a veces siento que decir simplemente "te quiero" se queda corto.</p>
+    <p>Te quiero muchísimo. Me gusta tenerte en mi vida, compartir momentos contigo y saber que existen recuerdos que podemos construir juntos.</p>
+    <p>No sé qué nos espera en el futuro, pero sí sé que hoy quería recordarte lo especial que eres para mí. Y si estos girasoles pudieran hablar, probablemente también te dirían lo mismo.</p>
+    <p>Gracias por existir, por ser tú y por hacer que mis días tengan un poquito más de luz.</p>
+    <div class="signature">Con cariño, Andres. 💛</div>
+    <button class="btn next">Sigue conmigo 🌻</button>
+  </div>
+</section>
+
+<section class="scene reveal page">
+  <div class="content fade">
+    <div class="eyebrow">Tercera parada ✨</div>
+    <div class="bigFlower"></div>
+    <div class="finalText">Aly, te quiero muchísimo. 💛</div>
+    <p class="small">Más de lo que estas palabras pueden explicar.</p>
+    <button class="btn next">Todavía falta algo... →</button>
+  </div>
+</section>
+
+<section class="scene sunset page">
+  <div class="sun"></div><div class="horizon"></div>
+  <div class="content fade" style="z-index:4;margin-bottom:24vh">
+    <div class="eyebrow">Cuarta parada 🌅</div>
+    <p class="small">Y si algún día dudas de lo importante que eres para mí...</p>
+    <h2>recuerda este pequeño jardín.</h2>
+    <button class="btn next">Una última cosa 💛</button>
+  </div>
+</section>
+
+<section class="scene final page">
+  <div class="content fade show">
+    <div class="eyebrow">La última parada 🌻</div>
+    <h1>Aly 💛</h1>
+    <p class="lead">Gracias por existir.<br>Gracias por formar parte de mi vida.<br><br><i>Con muchísimo cariño,<br>Andres ❤️</i></p>
+    <button class="btn next restart">Volver a vivirlo ↺</button>
+  </div>
+  <div class="footerFlowers"></div>
+</section>
+</main>
+
+<button class="music" id="music" title="Música">♪</button>
+<audio id="audio" loop src="musica.mp3"></audio>
+
+<script>
+const pages=[...document.querySelectorAll('.page')];let currentPage=0;
+function showPage(i){
+  pages[currentPage].classList.remove('active');
+  currentPage=(i+pages.length)%pages.length;
+  pages[currentPage].classList.add('active');
+  window.scrollTo({top:0,behavior:'instant'});
+}
+document.querySelectorAll('.next').forEach(b=>b.addEventListener('click',()=>{
+  showPage(currentPage+1);
+  const audio=document.getElementById('audio');
+  audio.play().catch(()=>{});
+}));
+document.querySelector('.restart')?.addEventListener('click',()=>showPage(0));
+
+const canvas=document.getElementById('fx'),ctx=canvas.getContext('2d');let W,H,particles=[];
+function resize(){W=canvas.width=innerWidth*devicePixelRatio;H=canvas.height=innerHeight*devicePixelRatio;canvas.style.width=innerWidth+'px';canvas.style.height=innerHeight+'px';ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
+addEventListener('resize',resize);resize();
+function make(){particles=Array.from({length:Math.min(95,Math.floor(innerWidth/10))},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*2+.4,v:Math.random()*.35+.08,a:Math.random()*Math.PI*2,s:Math.random()*.012+.003}))}make();
+function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);for(const p of particles){p.y-=p.v;p.x+=Math.sin(p.a)*.15;p.a+=p.s;if(p.y<-5){p.y=innerHeight+5;p.x=Math.random()*innerWidth}ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(255,226,117,.65)';ctx.fill()}requestAnimationFrame(draw)}draw();
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.18});document.querySelectorAll('.fade').forEach(x=>obs.observe(x));
+const audio=document.getElementById('audio'),btn=document.getElementById('music');btn.onclick=async()=>{if(audio.paused){try{await audio.play();btn.textContent='❚❚'}catch(e){alert('Coloca un archivo llamado musica.mp3 junto a index.html para usar música.')}}else{audio.pause();btn.textContent='♪'}};
+document.querySelector('.hero .btn').addEventListener('click',()=>{setTimeout(()=>{audio.play().then(()=>btn.textContent='❚❚').catch(()=>{});},100)});
+</script>
+</body>
+</html>
